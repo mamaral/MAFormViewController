@@ -70,4 +70,4 @@ Coupling the convenience and ease of MAFormViewControllers and MATextFieldCells,
 License
 =====
 
-This project is made available under the MIT license. See license.txt for details.
+This project is made available under the MIT license. See LICENSE.txt for details.
