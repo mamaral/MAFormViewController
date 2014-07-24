@@ -55,14 +55,14 @@ Later you can group these MAFormField objects into arrays, representing a sectio
 
 Coupling the convenience and ease of MAFormViewControllers and MATextFieldCells, takes away the need for you to handle the most annoying and repetitive tasks associated with creating forms. All of the following is done automatically for you:
 
-    - Creating and configuring all of the textfields and table views
-    - Automatically bringing up the keyboard and setting focus on the first cell for quick editing.
-    - Setting the correct keyboard type for the data domain of the field.
-    - Setting the correct return key type (Next or Done) depending on if the field is the last in the form or not.
-    - Navigation from cell to cell using the keyboard so users don't need to tap on the next cell to continue filling out the form.
-    - Dismissing the keyboard when the last field is done being edited.
-    - Validation of required fields - ensuring they aren't left blank, telling users which fields are missing and setting the focus on the cell with the empty value.
-    - Packaging up all of the form data into a dictionary for ease-of-use.
+- Creating and configuring all of the textfields and table views
+- Automatically bringing up the keyboard and setting focus on the first cell for quick editing.
+- Setting the correct keyboard type for the data domain of the field.
+- Setting the correct return key type (Next or Done) depending on if the field is the last in the form or not.
+- Navigation from cell to cell using the keyboard so users don't need to tap on the next cell to continue filling out the form.
+- Dismissing the keyboard when the last field is done being edited.
+- Validation of required fields - ensuring they aren't left blank, telling users which fields are missing and setting the focus on the cell with the empty value.
+- Packaging up all of the form data into a dictionary for ease-of-use.
 
 ![demo](Screenshots/form_demo.gif)
 
