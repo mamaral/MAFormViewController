@@ -1,0 +1,439 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		278140271980A6C100053209 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 278140261980A6C100053209 /* main.m */; };
+		2781402A1980A6C100053209 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 278140291980A6C100053209 /* AppDelegate.m */; };
+		2781402C1980A6C100053209 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2781402B1980A6C100053209 /* Images.xcassets */; };
+		278140381980A6C100053209 /* MAFormViewControllerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 278140371980A6C100053209 /* MAFormViewControllerTests.m */; };
+		278140431980A6D800053209 /* MATextFieldCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 278140421980A6D800053209 /* MATextFieldCell.m */; };
+		278140481980A70D00053209 /* MAFormViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 278140471980A70D00053209 /* MAFormViewController.m */; };
+		2781404B1980A86400053209 /* MAFormField.m in Sources */ = {isa = PBXBuildFile; fileRef = 2781404A1980A86400053209 /* MAFormField.m */; };
+		2781404E1980B19F00053209 /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2781404D1980B19F00053209 /* MainViewController.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		278140321980A6C100053209 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 278140191980A6C100053209 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 278140201980A6C100053209;
+			remoteInfo = MAFormViewController;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		278140211980A6C100053209 /* MAFormViewController.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MAFormViewController.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		278140251980A6C100053209 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		278140261980A6C100053209 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		278140281980A6C100053209 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		278140291980A6C100053209 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		2781402B1980A6C100053209 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		278140311980A6C100053209 /* MAFormViewControllerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MAFormViewControllerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		278140361980A6C100053209 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		278140371980A6C100053209 /* MAFormViewControllerTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MAFormViewControllerTests.m; sourceTree = "<group>"; };
+		278140411980A6D800053209 /* MATextFieldCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MATextFieldCell.h; sourceTree = "<group>"; };
+		278140421980A6D800053209 /* MATextFieldCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MATextFieldCell.m; sourceTree = "<group>"; };
+		278140461980A70D00053209 /* MAFormViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MAFormViewController.h; sourceTree = "<group>"; };
+		278140471980A70D00053209 /* MAFormViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MAFormViewController.m; sourceTree = "<group>"; };
+		278140491980A86300053209 /* MAFormField.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MAFormField.h; sourceTree = "<group>"; };
+		2781404A1980A86400053209 /* MAFormField.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MAFormField.m; sourceTree = "<group>"; };
+		2781404C1980B19F00053209 /* MainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainViewController.h; sourceTree = "<group>"; };
+		2781404D1980B19F00053209 /* MainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainViewController.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		2781401E1980A6C100053209 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2781402E1980A6C100053209 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		278140181980A6C100053209 = {
+			isa = PBXGroup;
+			children = (
+				27E60D771980C17B0092C10F /* Demo */,
+				278140241980A6C100053209 /* Supporting Files */,
+				278140231980A6C100053209 /* MAFormViewController */,
+				278140341980A6C100053209 /* MAFormViewControllerTests */,
+				278140221980A6C100053209 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		278140221980A6C100053209 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				278140211980A6C100053209 /* MAFormViewController.app */,
+				278140311980A6C100053209 /* MAFormViewControllerTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		278140231980A6C100053209 /* MAFormViewController */ = {
+			isa = PBXGroup;
+			children = (
+				278140461980A70D00053209 /* MAFormViewController.h */,
+				278140471980A70D00053209 /* MAFormViewController.m */,
+				278140491980A86300053209 /* MAFormField.h */,
+				2781404A1980A86400053209 /* MAFormField.m */,
+				278140411980A6D800053209 /* MATextFieldCell.h */,
+				278140421980A6D800053209 /* MATextFieldCell.m */,
+				2781402B1980A6C100053209 /* Images.xcassets */,
+			);
+			path = MAFormViewController;
+			sourceTree = "<group>";
+		};
+		278140241980A6C100053209 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				278140251980A6C100053209 /* Info.plist */,
+				278140261980A6C100053209 /* main.m */,
+			);
+			name = "Supporting Files";
+			path = MAFormViewController;
+			sourceTree = "<group>";
+		};
+		278140341980A6C100053209 /* MAFormViewControllerTests */ = {
+			isa = PBXGroup;
+			children = (
+				278140371980A6C100053209 /* MAFormViewControllerTests.m */,
+				278140351980A6C100053209 /* Supporting Files */,
+			);
+			path = MAFormViewControllerTests;
+			sourceTree = "<group>";
+		};
+		278140351980A6C100053209 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				278140361980A6C100053209 /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		27E60D771980C17B0092C10F /* Demo */ = {
+			isa = PBXGroup;
+			children = (
+				278140281980A6C100053209 /* AppDelegate.h */,
+				278140291980A6C100053209 /* AppDelegate.m */,
+				2781404C1980B19F00053209 /* MainViewController.h */,
+				2781404D1980B19F00053209 /* MainViewController.m */,
+			);
+			name = Demo;
+			path = MAFormViewController;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		278140201980A6C100053209 /* MAFormViewController */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 2781403B1980A6C100053209 /* Build configuration list for PBXNativeTarget "MAFormViewController" */;
+			buildPhases = (
+				2781401D1980A6C100053209 /* Sources */,
+				2781401E1980A6C100053209 /* Frameworks */,
+				2781401F1980A6C100053209 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = MAFormViewController;
+			productName = MAFormViewController;
+			productReference = 278140211980A6C100053209 /* MAFormViewController.app */;
+			productType = "com.apple.product-type.application";
+		};
+		278140301980A6C100053209 /* MAFormViewControllerTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 2781403E1980A6C100053209 /* Build configuration list for PBXNativeTarget "MAFormViewControllerTests" */;
+			buildPhases = (
+				2781402D1980A6C100053209 /* Sources */,
+				2781402E1980A6C100053209 /* Frameworks */,
+				2781402F1980A6C100053209 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				278140331980A6C100053209 /* PBXTargetDependency */,
+			);
+			name = MAFormViewControllerTests;
+			productName = MAFormViewControllerTests;
+			productReference = 278140311980A6C100053209 /* MAFormViewControllerTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		278140191980A6C100053209 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0600;
+				ORGANIZATIONNAME = "Mike Amaral";
+				TargetAttributes = {
+					278140201980A6C100053209 = {
+						CreatedOnToolsVersion = 6.0;
+					};
+					278140301980A6C100053209 = {
+						CreatedOnToolsVersion = 6.0;
+						TestTargetID = 278140201980A6C100053209;
+					};
+				};
+			};
+			buildConfigurationList = 2781401C1980A6C100053209 /* Build configuration list for PBXProject "MAFormViewController" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 278140181980A6C100053209;
+			productRefGroup = 278140221980A6C100053209 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				278140201980A6C100053209 /* MAFormViewController */,
+				278140301980A6C100053209 /* MAFormViewControllerTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		2781401F1980A6C100053209 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2781402C1980A6C100053209 /* Images.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2781402F1980A6C100053209 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		2781401D1980A6C100053209 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2781402A1980A6C100053209 /* AppDelegate.m in Sources */,
+				2781404E1980B19F00053209 /* MainViewController.m in Sources */,
+				2781404B1980A86400053209 /* MAFormField.m in Sources */,
+				278140271980A6C100053209 /* main.m in Sources */,
+				278140481980A70D00053209 /* MAFormViewController.m in Sources */,
+				278140431980A6D800053209 /* MATextFieldCell.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2781402D1980A6C100053209 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				278140381980A6C100053209 /* MAFormViewControllerTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		278140331980A6C100053209 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 278140201980A6C100053209 /* MAFormViewController */;
+			targetProxy = 278140321980A6C100053209 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		278140391980A6C100053209 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				METAL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		2781403A1980A6C100053209 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				METAL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		2781403C1980A6C100053209 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				INFOPLIST_FILE = MAFormViewController/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		2781403D1980A6C100053209 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				INFOPLIST_FILE = MAFormViewController/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		2781403F1980A6C100053209 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/MAFormViewController.app/MAFormViewController";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = MAFormViewControllerTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				METAL_ENABLE_DEBUG_INFO = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+			};
+			name = Debug;
+		};
+		278140401980A6C100053209 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/MAFormViewController.app/MAFormViewController";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = MAFormViewControllerTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				METAL_ENABLE_DEBUG_INFO = NO;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		2781401C1980A6C100053209 /* Build configuration list for PBXProject "MAFormViewController" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				278140391980A6C100053209 /* Debug */,
+				2781403A1980A6C100053209 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		2781403B1980A6C100053209 /* Build configuration list for PBXNativeTarget "MAFormViewController" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2781403C1980A6C100053209 /* Debug */,
+				2781403D1980A6C100053209 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		2781403E1980A6C100053209 /* Build configuration list for PBXNativeTarget "MAFormViewControllerTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2781403F1980A6C100053209 /* Debug */,
+				278140401980A6C100053209 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 278140191980A6C100053209 /* Project object */;
+}
