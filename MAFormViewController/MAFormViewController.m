@@ -27,7 +27,7 @@
     
     // cache the values we were init'd with for later and create our sections array
     _cellConfig = cellConfig;
-    _actionHandler = handler;
+    _actionHandler = handler ?: ^void(NSDictionary *resultDictionary){}; // non-nil handler in case nothing was provided
     _sections = [NSMutableArray array];
     
     return self;
