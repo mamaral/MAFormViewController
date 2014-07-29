@@ -18,4 +18,9 @@
 
 - (instancetype)initWithCellConfigurations:(NSArray *)cellConfig actionText:(NSString *)actionText handler:(void (^)(NSDictionary *resultDictionary))handler;
 
+
+// expose these for unit tests
+- (void)handleAction;
+- (BOOL)validate;
+
 @end
