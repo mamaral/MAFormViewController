@@ -66,6 +66,10 @@ Coupling the convenience and ease of MAFormViewControllers and MATextFieldCells,
 
 ![demo](Screenshots/form_demo.gif)
 
+Testing
+=====
+
+Open the project in Xcode, select the simulator and hit command-U.
 
 License
 =====
