@@ -17,7 +17,7 @@ static CGFloat const kToolbarHeight = 50.0;
 
 @implementation MATextFieldCell
 
-- (instancetype)initWithFieldType:(NSInteger)type action:(NSInteger)action actionHandler:(void (^)(void))handler {
+- (instancetype)initWithFieldType:(NSUInteger)type action:(NSUInteger)action actionHandler:(void (^)(void))handler {
     self = [super initWithStyle:UITableViewCellStyleDefault reuseIdentifier:nil];
     self.selectionStyle = UITableViewCellSelectionStyleNone;
     

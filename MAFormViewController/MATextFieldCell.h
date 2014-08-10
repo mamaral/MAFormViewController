@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-enum MATextFieldType : NSInteger {
+enum MATextFieldType : NSUInteger {
     MATextFieldTypeDefault = 0,
     MATextFieldTypeName,
     MATextFieldTypePhone,
@@ -23,20 +23,20 @@ enum MATextFieldType : NSInteger {
     MATextFieldTypeNonEditable
 };
 
-enum MATextFieldActionType: NSInteger {
+enum MATextFieldActionType: NSUInteger {
     MATextFieldActionTypeNone = 0,
     MATextFieldActionTypeNext,
     MATextFieldActionTypeDone
 };
 
 @interface MATextFieldCell : UITableViewCell <UITextFieldDelegate> {
-    NSInteger _type;
-    NSInteger _action;
+    NSUInteger _type;
+    NSUInteger _action;
     BOOL _shouldAttemptFormat;
     void (^_actionHandler)(void);
 }
 
-- (MATextFieldCell *)initWithFieldType:(NSInteger)type action:(NSInteger)action actionHandler:(void (^)(void))handler;
+- (MATextFieldCell *)initWithFieldType:(NSUInteger)type action:(NSUInteger)action actionHandler:(void (^)(void))handler;
 
 @property (nonatomic, retain) UITextField *textField;
 
