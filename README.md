@@ -19,38 +19,38 @@ MAFormViewControllers are made up of arrays of MAFormField objects - which in a 
 Later you can group these MAFormField objects into arrays, representing a section of a form. A form can consist of any number of sections and fields therein. All you need to do is create all the fields, group them how you'd prefer, and pass them to the MAFormViewController's custom init method, which accepts the fields you created, a title for the button used to submit/send/save the form information, and a block that will pass back a dictionary representation of the form. using the keys you provided when creating the fields as the keys in the dictionary, and the values the user entered into the fields as the values associated with those keys.
 
 ```js
-    // create the cells
-    MAFormField *name = [MAFormField fieldWithKey:@"name" type:MATextFieldTypeName initialValue:nil placeholder:@"Full Name" required:YES];
-    MAFormField *phone = [MAFormField fieldWithKey:@"phone" type:MATextFieldTypePhone initialValue:nil placeholder:@"Phone Number" required:YES];
-    MAFormField *email = [MAFormField fieldWithKey:@"email" type:MATextFieldTypeEmail initialValue:nil placeholder:@"Email (optional)" required:NO];
-    MAFormField *street = [MAFormField fieldWithKey:@"street" type:MATextFieldTypeAddress initialValue:nil placeholder:@"Street" required:YES];
-    MAFormField *city = [MAFormField fieldWithKey:@"city" type:MATextFieldTypeAddress initialValue:nil placeholder:@"City" required:YES];
-    MAFormField *state = [MAFormField fieldWithKey:@"state" type:MATextFieldTypeStateAbbr initialValue:nil placeholder:@"State" required:YES];
-    MAFormField *zip = [MAFormField fieldWithKey:@"zip" type:MATextFieldTypeZIP initialValue:nil placeholder:@"ZIP" required:YES];
+// create the cells
+MAFormField *name = [MAFormField fieldWithKey:@"name" type:MATextFieldTypeName initialValue:nil placeholder:@"Full Name" required:YES];
+MAFormField *phone = [MAFormField fieldWithKey:@"phone" type:MATextFieldTypePhone initialValue:nil placeholder:@"Phone Number" required:YES];
+MAFormField *email = [MAFormField fieldWithKey:@"email" type:MATextFieldTypeEmail initialValue:nil placeholder:@"Email (optional)" required:NO];
+MAFormField *street = [MAFormField fieldWithKey:@"street" type:MATextFieldTypeAddress initialValue:nil placeholder:@"Street" required:YES];
+MAFormField *city = [MAFormField fieldWithKey:@"city" type:MATextFieldTypeAddress initialValue:nil placeholder:@"City" required:YES];
+MAFormField *state = [MAFormField fieldWithKey:@"state" type:MATextFieldTypeStateAbbr initialValue:nil placeholder:@"State" required:YES];
+MAFormField *zip = [MAFormField fieldWithKey:@"zip" type:MATextFieldTypeZIP initialValue:nil placeholder:@"ZIP" required:YES];
     
-    // separate the cells into sections
-    NSArray *firstSection = @[name, phone, email];
-    NSArray *secondSection = @[street, city, state, zip];
-    NSArray *cellConfig = @[firstSection, secondSection];
-    
-    // create the form, wrap it in a navigation controller, and present it modally
-    MAFormViewController *formVC = [[MAFormViewController alloc] initWithCellConfigurations:cellConfig actionText:@"Save" handler:^(NSDictionary *resultDictionary) {
-        // now that we're done, dismiss the form
-        [self dismissViewControllerAnimated:YES completion:nil];
-        
-        // if we don't have a result dictionary, the user cancelled, rather than submitted the form
-        if (!resultDictionary) {
-            return;
-        }
-        
-        // do whatever you want with the results - you can access specific values from the dictionary using
-        // the key you provided when you created the form
-        [[[UIAlertView alloc] initWithTitle:nil message:[NSString stringWithFormat:@"Thanks for registering %@!", resultDictionary[@"name"]] delegate:nil cancelButtonTitle:@"Yay!" otherButtonTitles:nil] show];
-        NSLog(@"%@", [resultDictionary description]);
-    }];
-    
-    UINavigationController *formNC = [[UINavigationController alloc] initWithRootViewController:formVC];
-    [self presentViewController:formNC animated:YES completion:nil];
+// separate the cells into sections
+NSArray *firstSection = @[name, phone, email];
+NSArray *secondSection = @[street, city, state, zip];
+NSArray *cellConfig = @[firstSection, secondSection];
+
+// create the form, wrap it in a navigation controller, and present it modally
+MAFormViewController *formVC = [[MAFormViewController alloc] initWithCellConfigurations:cellConfig actionText:@"Save" animatePlaceholders:YES handler:^(NSDictionary *resultDictionary) {
+// now that we're done, dismiss the form
+[self dismissViewControllerAnimated:YES completion:nil];
+
+// if we don't have a result dictionary, the user cancelled, rather than submitted the form
+if (!resultDictionary) {
+return;
+}
+
+// do whatever you want with the results - you can access specific values from the dictionary using
+// the key you provided when you created the form
+[[[UIAlertView alloc] initWithTitle:nil message:[NSString stringWithFormat:@"Thanks for registering %@!", resultDictionary[@"name"]] delegate:nil cancelButtonTitle:@"Yay!" otherButtonTitles:nil] show];
+NSLog(@"%@", [resultDictionary description]);
+}];
+
+UINavigationController *formNC = [[UINavigationController alloc] initWithRootViewController:formVC];
+[self presentViewController:formNC animated:YES completion:nil];
 ```
 
 Coupling the convenience and ease of MAFormViewControllers and MATextFieldCells, takes away the need for you to handle the most annoying and repetitive tasks associated with creating forms. All of the following is done automatically for you:
