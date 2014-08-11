@@ -17,7 +17,7 @@
 
 @implementation MAFormViewController
 
-- (instancetype)initWithCellConfigurations:(NSArray *)cellConfig actionText:(NSString *)actionText handler:(void (^)(NSDictionary *resultDictionary))handler {
+- (instancetype)initWithCellConfigurations:(NSArray *)cellConfig actionText:(NSString *)actionText animatePlaceholders:(BOOL)animatePlaceholders handler:(void (^)(NSDictionary *resultDictionary))handler {
     self = [super initWithStyle:UITableViewStyleGrouped];
     
     // the nav buttons should be like most iOS tableView-based forms a cancel button on
@@ -29,6 +29,7 @@
     _cellConfig = cellConfig;
     _actionHandler = handler ?: ^void(NSDictionary *resultDictionary){}; // non-nil handler in case nothing was provided
     _sections = [NSMutableArray array];
+    _animatePlaceholders = animatePlaceholders;
     
     return self;
 }
@@ -78,9 +79,9 @@
             // get the field for this cell in this section
             MAFormField *field = _cellConfig[sectionIndex][cellIndex];
             
-            // create the cell with the given type, the appropropriate action, and the action handler
+            // create the cell with the given type, the appropriate action, and the action handler
             // will set the correct field as the first responder or resign the first responder appropriately
-            MATextFieldCell *cell = [[MATextFieldCell alloc] initWithFieldType:field.fieldType action:action actionHandler:^{
+            MATextFieldCell *cell = [[MATextFieldCell alloc] initWithFieldType:field.fieldType action:action animatePlaceholder:_animatePlaceholders actionHandler:^{
                 // if there's a reference to a next field, we're not the final field in the
                 // form and we should tell the next field to become the first responder
                 if (nextField) {
@@ -205,6 +206,15 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     NSArray *cellsForSection = _sections[indexPath.section];
     return cellsForSection[indexPath.row];
+}
+
+
+#pragma mark - Table view delegate
+
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
+    NSArray *cellsForSection = _sections[indexPath.section];
+    MATextFieldCell *cell = cellsForSection[indexPath.row];
+    return cell.suggestedHeight;
 }
 
 

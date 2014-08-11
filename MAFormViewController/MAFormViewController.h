@@ -14,9 +14,10 @@
     void(^_actionHandler)(NSDictionary *);
     UITextField *_firstField;
     UITextField *_lastField;
+    BOOL _animatePlaceholders;
 }
 
-- (instancetype)initWithCellConfigurations:(NSArray *)cellConfig actionText:(NSString *)actionText handler:(void (^)(NSDictionary *resultDictionary))handler;
+- (instancetype)initWithCellConfigurations:(NSArray *)cellConfig actionText:(NSString *)actionText animatePlaceholders:(BOOL)animatePlaceholders handler:(void (^)(NSDictionary *resultDictionary))handler;
 
 
 // expose these for unit tests
