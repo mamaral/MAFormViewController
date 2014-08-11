@@ -14,6 +14,11 @@ static NSString * const kDoneButtonText = @"Done";
 static CGFloat const kTextFieldVerticalPadding = 7.0;
 static CGFloat const kTextFieldHorizontalPadding = 10.0;
 static CGFloat const kToolbarHeight = 50.0;
+static CGFloat const kPlaceHolderLabelFontSize = 14;
+static CGFloat const kPlaceholderLabelFrameHeight = 18;
+static CGFloat const kPlaceholderLabelAnimationDuration = 0.3;
+static CGFloat const kDefaultSuggestedHeight = 44;
+static CGFloat const kHeightIfUsingAnimatedPlaceholder = 55;
 
 @implementation MATextFieldCell
 
