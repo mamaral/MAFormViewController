@@ -22,7 +22,7 @@ static CGFloat const kHeightIfUsingAnimatedPlaceholder = 55;
 
 @implementation MATextFieldCell
 
-- (instancetype)initWithFieldType:(NSUInteger)type action:(NSUInteger)action actionHandler:(void (^)(void))handler {
+- (instancetype)initWithFieldType:(NSUInteger)type action:(NSUInteger)action animatePlaceholder:(BOOL)animate actionHandler:(void (^)(void))handler {
     self = [super initWithStyle:UITableViewCellStyleDefault reuseIdentifier:nil];
     self.selectionStyle = UITableViewCellSelectionStyleNone;
     
@@ -30,6 +30,8 @@ static CGFloat const kHeightIfUsingAnimatedPlaceholder = 55;
     _action = action ?: MATextFieldActionTypeNone;
     _actionHandler = handler ?: ^{};
     _shouldAttemptFormat = YES;
+    _animatePlaceholder = animate;
+    _suggestedHeight = animate ? kHeightIfUsingAnimatedPlaceholder : kDefaultSuggestedHeight;
     
     [self configureTextField];
     
