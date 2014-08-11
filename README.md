@@ -12,7 +12,7 @@ Drop in the MAFormViewController.h/m, MAFormField.h/m, and MATextFieldCell.h/m i
 MAFormViewControllers are made up of arrays of MAFormField objects - which in a single line of code encapsulates lots of annoying code and logic that you won't need to write over and over again. The key is used later to identify the information the user entered for each field, the type (https://github.com/mamaral/MATextFieldCell for more details) defines the type of form field that will be created, which includes keyboard types, data domain restrictions, etc., an initial value in case you want to pre-propulate fields in the form with existing data, a placeholder for each field, and a BOOL used when we validate the form to ensure (or not) that field has an entry present.
 
 ```js
-    MAFormField *userField = [MAFormField fieldWithKey:@"userName" type:MATextFieldTypeName initialValue:nil placeholder:@"Username" required:YES];
+MAFormField *userField = [MAFormField fieldWithKey:@"userName" type:MATextFieldTypeName initialValue:nil placeholder:@"Username" required:YES];
 
 ```
 
