@@ -206,29 +206,47 @@ static CGFloat const kHeightIfUsingAnimatedPlaceholder = 55;
 - (BOOL)textField:(UITextField *)textField shouldChangeCharactersInRange:(NSRange)range replacementString:(NSString *)string {
     NSString *resultString = [textField.text stringByReplacingCharactersInRange:range withString:string];
     
+    // flag to determine if we are going to want to change characters in range
+    BOOL shouldAllowEditing = NO;
+    
     switch (_type) {
         // the state abbreviation cell should only allow two characters
         case MATextFieldTypeStateAbbr: {
-            return resultString.length < 3;
+            shouldAllowEditing = resultString.length < 3;
         }
             
         // the ZIP cell should only allow 5 characters
         case MATextFieldTypeZIP: {
-            return resultString.length < 6;
+            shouldAllowEditing = resultString.length < 6;
         }
             
         // we want to flag that we should attempt to format the phone number as long as they are adding characters...
         // if they are deleting characters ignore it and don't attempt to format
         case MATextFieldTypePhone: {
             _shouldAttemptFormat = resultString.length > self.textField.text.length;
-            return YES;
+            shouldAllowEditing = YES;
         }
          
         // otherwise let them do whatever they want
         default: {
-            return YES;
+            shouldAllowEditing = YES;
         }
     }
+    
+    // if we're going to allow editing and we want to animate the placeholder
+    if (shouldAllowEditing && _animatePlaceholder) {
+        // animate it if we're adding characters and we don't already have a placeholder label
+        if (!_placeholderLabel && resultString.length > 0) {
+            [self animatePlaceholderAbove];
+        }
+        
+        // animate it back if we have a placeholder label and the resulting string will be empty
+        else if (_placeholderLabel && resultString.length == 0) {
+            [self animatePlaceholderBack];
+        }
+    }
+    
+    return shouldAllowEditing;
 }
 
 
