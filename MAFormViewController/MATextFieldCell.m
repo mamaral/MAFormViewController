@@ -249,6 +249,24 @@ static CGFloat const kHeightIfUsingAnimatedPlaceholder = 55;
     return shouldAllowEditing;
 }
 
+- (BOOL)textFieldShouldBeginEditing:(UITextField *)textField {
+    // when we start editing again, update the placeholder label color to the active state
+    if (_placeholderLabel) {
+        _placeholderLabel.textColor = [UIColor blueColor];
+    }
+    
+    return YES;
+}
+
+- (BOOL)textFieldShouldEndEditing:(UITextField *)textField {
+    // when we end editing, update the placeholder label color to the inactive state
+    if (_placeholderLabel) {
+        _placeholderLabel.textColor = [UIColor lightGrayColor];
+    }
+    
+    return YES;
+}
+
 
 #pragma mark - phone number formatting
 
