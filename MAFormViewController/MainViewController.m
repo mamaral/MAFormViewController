@@ -49,7 +49,7 @@
     NSArray *cellConfig = @[firstSection, secondSection];
     
     // create the form, wrap it in a navigation controller, and present it modally
-    MAFormViewController *formVC = [[MAFormViewController alloc] initWithCellConfigurations:cellConfig actionText:@"Save" handler:^(NSDictionary *resultDictionary) {
+    MAFormViewController *formVC = [[MAFormViewController alloc] initWithCellConfigurations:cellConfig actionText:@"Save" animatePlaceholders:YES handler:^(NSDictionary *resultDictionary) {
         // now that we're done, dismiss the form
         [self dismissViewControllerAnimated:YES completion:nil];
         
