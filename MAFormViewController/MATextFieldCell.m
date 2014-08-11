@@ -147,6 +147,37 @@ static CGFloat const kHeightIfUsingAnimatedPlaceholder = 55;
 }
 
 
+#pragma mark - placeholder animation
+
+- (void)animatePlaceholderAbove {
+    _placeholderLabel = [[UILabel alloc] initWithFrame:CGRectMake(kTextFieldHorizontalPadding, kTextFieldVerticalPadding, CGRectGetWidth(self.contentView.frame) - (2 * kTextFieldHorizontalPadding), CGRectGetHeight(self.contentView.frame) - (2 * kTextFieldVerticalPadding))];
+    _placeholderLabel.text = self.textField.placeholder;
+    _placeholderLabel.font = [UIFont systemFontOfSize:kPlaceHolderLabelFontSize];
+    _placeholderLabel.textColor = [UIColor lightGrayColor];
+    _placeholderLabel.alpha = 0.0;
+    
+    [self addSubview:_placeholderLabel];
+    CGRect originalFrame = _placeholderLabel.frame;
+    
+    [UIView animateWithDuration:kPlaceholderLabelAnimationDuration animations:^{
+        _placeholderLabel.frame = CGRectMake(CGRectGetMinX(originalFrame), CGRectGetMinY(originalFrame) - 4, CGRectGetWidth(originalFrame), kPlaceholderLabelFrameHeight);
+        _placeholderLabel.textColor = [UIColor blueColor];
+        _placeholderLabel.alpha = 1.0;
+    }];
+}
+
+- (void)animatePlaceholderBack {
+    [UIView animateWithDuration:kPlaceholderLabelAnimationDuration animations:^{
+        _placeholderLabel.frame = CGRectMake(kTextFieldHorizontalPadding, kTextFieldVerticalPadding, CGRectGetWidth(self.contentView.frame) - (2 * kTextFieldHorizontalPadding), CGRectGetHeight(self.contentView.frame) - (2 * kTextFieldVerticalPadding));
+        _placeholderLabel.textColor = [UIColor lightGrayColor];
+        _placeholderLabel.alpha = 0.0;
+    } completion:^(BOOL finished) {
+        [_placeholderLabel removeFromSuperview];
+        _placeholderLabel = nil;
+    }];
+}
+
+
 #pragma mark - Toolbar setup
 
 - (void)setupToolbarWithButtonTitle:(NSString *)title {
