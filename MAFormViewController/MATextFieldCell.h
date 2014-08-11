@@ -34,10 +34,13 @@ enum MATextFieldActionType: NSUInteger {
     NSUInteger _action;
     BOOL _shouldAttemptFormat;
     void (^_actionHandler)(void);
+    UILabel *_placeholderLabel;
+    BOOL _animatePlaceholder;
 }
 
-- (MATextFieldCell *)initWithFieldType:(NSUInteger)type action:(NSUInteger)action actionHandler:(void (^)(void))handler;
+- (instancetype)initWithFieldType:(NSUInteger)type action:(NSUInteger)action animatePlaceholder:(BOOL)animate actionHandler:(void (^)(void))handler;
 
 @property (nonatomic, retain) UITextField *textField;
+@property (readonly) CGFloat suggestedHeight;
 
 @end
