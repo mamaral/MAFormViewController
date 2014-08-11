@@ -10,13 +10,14 @@
 
 @implementation MAFormField
 
-+ (instancetype)fieldWithKey:(NSString *)key type:(enum MATextFieldType)type initialValue:(NSString *)initialValue placeholder:(NSString *)placeholder required:(BOOL)required {
++ (instancetype)fieldWithKey:(NSString *)key type:(enum MATextFieldType)type initialValue:(NSString *)initialValue placeholder:(NSString *)placeholder animatePlaceholder:(BOOL)animate required:(BOOL)required {
     MAFormField *formField = [MAFormField new];
     formField.key = key;
     formField.fieldType = type;
     formField.initialValue = initialValue;
     formField.placeholder = placeholder;
     formField.required = required;
+    formField.animatePlaceholder = animate;
     return formField;
 }
 

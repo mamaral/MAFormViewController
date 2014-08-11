@@ -15,8 +15,9 @@
 @property (nonatomic) enum MATextFieldType fieldType;
 @property (nonatomic, retain) NSString *initialValue;
 @property (nonatomic, retain) NSString *placeholder;
+@property (nonatomic) BOOL animatePlaceholder;
 @property (nonatomic) BOOL required;
 
-+ (instancetype)fieldWithKey:(NSString *)key type:(enum MATextFieldType)type initialValue:(NSString *)initialValue placeholder:(NSString *)placeholder required:(BOOL)required;
++ (instancetype)fieldWithKey:(NSString *)key type:(enum MATextFieldType)type initialValue:(NSString *)initialValue placeholder:(NSString *)placeholder animatePlaceholder:(BOOL)animate required:(BOOL)required;
 
 @end
