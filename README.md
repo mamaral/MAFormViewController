@@ -63,7 +63,19 @@ Coupling the convenience and ease of MAFormViewControllers and MATextFieldCells,
 - Validation of required fields - ensuring they aren't left blank, telling users which fields are missing and setting the focus on the cell with the empty value.
 - Packaging up all of the form data into a dictionary for ease-of-use.
 
+
+With Animated Placeholders:
+=====
+
+![demo](Screenshots/form_demo_animated_placeholders.gif)
+
+
+Without Animated Placeholders:
+=====
+
 ![demo](Screenshots/form_demo.gif)
+
+
 
 Testing
 =====
