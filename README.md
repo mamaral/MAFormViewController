@@ -82,6 +82,12 @@ Testing
 
 Open the project in Xcode, select the simulator and hit command-U.
 
+
+Community
+=====
+
+Questions, comments, issues, and pull requests welcomed!! Thanks to jverdi's awesome project (https://github.com/jverdi/JVFloatLabeledTextField) for inspiration on the animated placeholders.
+
 License
 =====
 
