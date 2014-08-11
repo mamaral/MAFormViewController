@@ -42,7 +42,8 @@ static CGFloat const kHeightIfUsingAnimatedPlaceholder = 55;
 #pragma mark - Text field configuration
 
 - (void)configureTextField {
-    self.textField = [[UITextField alloc] initWithFrame:CGRectMake(kTextFieldHorizontalPadding, kTextFieldVerticalPadding, CGRectGetWidth(self.contentView.frame) - 2 * kTextFieldHorizontalPadding, CGRectGetHeight(self.contentView.frame) - (2 * kTextFieldVerticalPadding))];
+    self.textField = [UITextField new];
+    self.textField.frame = _animatePlaceholder ? CGRectMake(kTextFieldHorizontalPadding, CGRectGetHeight(self.contentView.frame) * .33, CGRectGetWidth(self.contentView.frame) - (2 * kTextFieldHorizontalPadding), CGRectGetHeight(self.contentView.frame) * .66) : CGRectMake(kTextFieldHorizontalPadding, kTextFieldVerticalPadding, CGRectGetWidth(self.contentView.frame) - (2 * kTextFieldHorizontalPadding), CGRectGetHeight(self.contentView.frame) - (2 * kTextFieldVerticalPadding));
     self.textField.delegate = self;
     self.textField.autoresizingMask = UIViewAutoresizingFlexibleHeight + UIViewAutoresizingFlexibleWidth;
     [self.contentView addSubview:self.textField];
