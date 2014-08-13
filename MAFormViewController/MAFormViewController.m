@@ -63,12 +63,12 @@
     UITextField *nextField;
     
     // loop through the sections in reverse order
-    for (int sectionIndex = _cellConfig.count - 1; sectionIndex >= 0; sectionIndex--) {
+    for (NSInteger sectionIndex = _cellConfig.count - 1; sectionIndex >= 0; sectionIndex--) {
         
         // loop through for each cell in the section also in reverse order
         NSArray *sectionConfig = _cellConfig[sectionIndex];
         NSMutableArray *cellsForSection = [NSMutableArray arrayWithCapacity:sectionConfig.count];
-        for (int cellIndex = sectionConfig.count - 1; cellIndex >= 0; cellIndex--) {
+        for (NSInteger cellIndex = sectionConfig.count - 1; cellIndex >= 0; cellIndex--) {
             // determine if this is the first or last cell - this has two purposes, one to determine
             // the first/next responder (if not the last cell) when navigating from field to field,
             // and also to set the field action type so the keyboard shows the correct Next or Done buttons
