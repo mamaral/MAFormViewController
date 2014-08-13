@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		27212FF9199B048000DC9C90 /* MAFormField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27212FF8199B048000DC9C90 /* MAFormField.swift */; };
 		278140271980A6C100053209 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 278140261980A6C100053209 /* main.m */; };
 		2781402A1980A6C100053209 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 278140291980A6C100053209 /* AppDelegate.m */; };
 		2781402C1980A6C100053209 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2781402B1980A6C100053209 /* Images.xcassets */; };
@@ -28,6 +29,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		27212FF7199B048000DC9C90 /* MAFormViewController-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "MAFormViewController-Bridging-Header.h"; sourceTree = "<group>"; };
+		27212FF8199B048000DC9C90 /* MAFormField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MAFormField.swift; sourceTree = "<group>"; };
 		278140211980A6C100053209 /* MAFormViewController.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MAFormViewController.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		278140251980A6C100053209 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		278140261980A6C100053209 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -65,6 +68,28 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		27212FF5199B045A00DC9C90 /* Objective-C */ = {
+			isa = PBXGroup;
+			children = (
+				278140461980A70D00053209 /* MAFormViewController.h */,
+				278140471980A70D00053209 /* MAFormViewController.m */,
+				278140491980A86300053209 /* MAFormField.h */,
+				2781404A1980A86400053209 /* MAFormField.m */,
+				278140411980A6D800053209 /* MATextFieldCell.h */,
+				278140421980A6D800053209 /* MATextFieldCell.m */,
+			);
+			name = "Objective-C";
+			sourceTree = "<group>";
+		};
+		27212FF6199B046B00DC9C90 /* Swift */ = {
+			isa = PBXGroup;
+			children = (
+				27212FF8199B048000DC9C90 /* MAFormField.swift */,
+				27212FF7199B048000DC9C90 /* MAFormViewController-Bridging-Header.h */,
+			);
+			name = Swift;
+			sourceTree = "<group>";
+		};
 		278140181980A6C100053209 = {
 			isa = PBXGroup;
 			children = (
@@ -88,12 +113,8 @@
 		278140231980A6C100053209 /* MAFormViewController */ = {
 			isa = PBXGroup;
 			children = (
-				278140461980A70D00053209 /* MAFormViewController.h */,
-				278140471980A70D00053209 /* MAFormViewController.m */,
-				278140491980A86300053209 /* MAFormField.h */,
-				2781404A1980A86400053209 /* MAFormField.m */,
-				278140411980A6D800053209 /* MATextFieldCell.h */,
-				278140421980A6D800053209 /* MATextFieldCell.m */,
+				27212FF6199B046B00DC9C90 /* Swift */,
+				27212FF5199B045A00DC9C90 /* Objective-C */,
 				2781402B1980A6C100053209 /* Images.xcassets */,
 			);
 			path = MAFormViewController;
@@ -238,6 +259,7 @@
 				2781402A1980A6C100053209 /* AppDelegate.m in Sources */,
 				2781404E1980B19F00053209 /* MainViewController.m in Sources */,
 				2781404B1980A86400053209 /* MAFormField.m in Sources */,
+				27212FF9199B048000DC9C90 /* MAFormField.swift in Sources */,
 				278140271980A6C100053209 /* main.m in Sources */,
 				278140481980A70D00053209 /* MAFormViewController.m in Sources */,
 				278140431980A6D800053209 /* MATextFieldCell.m in Sources */,
@@ -346,10 +368,13 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CLANG_ENABLE_MODULES = YES;
 				INFOPLIST_FILE = MAFormViewController/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "MAFormViewController/MAFormViewController-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
 		};
@@ -358,10 +383,12 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CLANG_ENABLE_MODULES = YES;
 				INFOPLIST_FILE = MAFormViewController/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "MAFormViewController/MAFormViewController-Bridging-Header.h";
 			};
 			name = Release;
 		};

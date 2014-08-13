@@ -31,7 +31,7 @@
     MAFormField *testField = [MAFormField fieldWithKey:key type:MATextFieldTypeDefault initialValue:value placeholder:nil required:NO];
     
     // create the form with the test field and force it to load so the cells are generated
-    MAFormViewController *formVC = [[MAFormViewController alloc] initWithCellConfigurations:@[@[testField]] actionText:nil handler:^(NSDictionary *resultDictionary) {
+    MAFormViewController *formVC = [[MAFormViewController alloc] initWithCellConfigurations:@[@[testField]] actionText:nil animatePlaceholders:NO handler:^(NSDictionary *resultDictionary) {
         // ensure the value for the key matches what we initially set
         XCTAssert([resultDictionary[key] isEqualToString:value], @"The pre-loaded value is incorrect.");
     }];
@@ -45,7 +45,7 @@
     // create a field with nothing provided, just flag that it is required, create a form with the
     // field, and force it to load so the cells are generated
     MAFormField *testField = [MAFormField fieldWithKey:nil type:MATextFieldTypeDefault initialValue:nil placeholder:nil required:YES];
-    MAFormViewController *formVC = [[MAFormViewController alloc] initWithCellConfigurations:@[@[testField]] actionText:nil handler:nil];
+    MAFormViewController *formVC = [[MAFormViewController alloc] initWithCellConfigurations:@[@[testField]] actionText:nil animatePlaceholders:NO handler:nil];
     [formVC viewDidLoad];
     
     // call the validation function, which should fail as the required field has no value
@@ -58,7 +58,7 @@
     NSString *key = @"key";
     NSString *value = @"value";
     MAFormField *testField = [MAFormField fieldWithKey:key type:MATextFieldTypeDefault initialValue:value placeholder:nil required:YES];
-    MAFormViewController *formVC = [[MAFormViewController alloc] initWithCellConfigurations:@[@[testField]] actionText:nil handler:nil];
+    MAFormViewController *formVC = [[MAFormViewController alloc] initWithCellConfigurations:@[@[testField]] actionText:nil animatePlaceholders:NO handler:nil];
     [formVC viewDidLoad];
     [formVC handleAction];
     
@@ -70,7 +70,7 @@
     // create a field with nothing provided, just flag that it is provided, then create the form controller
     // with the field we just created, force it to load so the cells are generated
     MAFormField *testField = [MAFormField fieldWithKey:nil type:MATextFieldTypeDefault initialValue:nil placeholder:nil required:NO];
-    MAFormViewController *formVC = [[MAFormViewController alloc] initWithCellConfigurations:@[@[testField]] actionText:nil handler:nil];
+    MAFormViewController *formVC = [[MAFormViewController alloc] initWithCellConfigurations:@[@[testField]] actionText:nil animatePlaceholders:NO handler:nil];
     [formVC viewDidLoad];
     
     // call the validation function, which should fail as we didn't provide any value for the required field
