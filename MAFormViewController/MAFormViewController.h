@@ -8,17 +8,19 @@
 
 #import <UIKit/UIKit.h>
 
+typedef void (^actionHandler) (NSDictionary *resultsDictionary);
+
 @interface MAFormViewController : UITableViewController {
     NSMutableArray *_sections;
     NSArray *_cellConfig;
-    void(^_actionHandler)(NSDictionary *);
     UITextField *_firstField;
     UITextField *_lastField;
     BOOL _animatePlaceholders;
 }
 
-- (instancetype)initWithCellConfigurations:(NSArray *)cellConfig actionText:(NSString *)actionText animatePlaceholders:(BOOL)animatePlaceholders handler:(void (^)(NSDictionary *resultDictionary))handler;
+- (instancetype)initWithCellConfigurations:(NSArray *)cellConfig actionText:(NSString *)actionText animatePlaceholders:(BOOL)animatePlaceholders handler:(actionHandler)handler;
 
+@property actionHandler handler;
 
 // expose these for unit tests
 - (void)handleAction;
