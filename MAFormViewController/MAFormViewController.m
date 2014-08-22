@@ -17,7 +17,7 @@
 
 @implementation MAFormViewController
 
-- (instancetype)initWithCellConfigurations:(NSArray *)cellConfig actionText:(NSString *)actionText animatePlaceholders:(BOOL)animatePlaceholders handler:(void (^)(NSDictionary *resultDictionary))handler {
+- (instancetype)initWithCellConfigurations:(NSArray *)cellConfig actionText:(NSString *)actionText animatePlaceholders:(BOOL)animatePlaceholders handler:(actionHandler)handler {
     self = [super initWithStyle:UITableViewStyleGrouped];
     
     // the nav buttons should be like most iOS tableView-based forms a cancel button on
@@ -27,9 +27,9 @@
     
     // cache the values we were init'd with for later and create our sections array
     _cellConfig = [[NSArray alloc] initWithArray:cellConfig];
-    _actionHandler = handler ?: ^void(NSDictionary *resultDictionary){}; // non-nil handler in case nothing was provided
-    _sections = [NSMutableArray array];
+    _sections = [[NSMutableArray alloc] init];
     _animatePlaceholders = animatePlaceholders;
+    _handler = handler;
     
     return self;
 }
@@ -151,13 +151,14 @@
     }
     
     // call the handler with the resulting dictionary
-    _actionHandler(resultDictionary);
+    _handler(resultDictionary);
 }
 
 - (void)cancel {
     // simply call the action handler with nil as the param
     // and the caller/presenter can handle what to do in this case
-    _actionHandler(nil);
+    
+    _handler( [[NSDictionary alloc] init] );
 }
 
 
