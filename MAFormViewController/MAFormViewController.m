@@ -81,7 +81,7 @@
             
             // create the cell with the given type, the appropriate action, and the action handler
             // will set the correct field as the first responder or resign the first responder appropriately
-            MATextFieldCell *cell = [[MATextFieldCell alloc] initWithFieldType:field.fieldType action:action animatePlaceholder:_animatePlaceholders actionHandler:^{
+            MATextFieldCell *cell = [[MATextFieldCell alloc] initWithFieldType:field.fieldType action:action animatePlaceholder:_animatePlaceholders actionHandler:[^{
                 // if there's a reference to a next field, we're not the final field in the
                 // form and we should tell the next field to become the first responder
                 if (nextField) {
@@ -92,7 +92,7 @@
                 else {
                     [_lastField resignFirstResponder];
                 }
-            }];
+            } copy]];
             
             // set the initial value and placeholder for this cell
             cell.textField.text = field.initialValue;
