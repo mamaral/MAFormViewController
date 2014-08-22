@@ -26,7 +26,7 @@
     self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:actionText style:UIBarButtonItemStylePlain target:self action:@selector(handleAction)];
     
     // cache the values we were init'd with for later and create our sections array
-    _cellConfig = cellConfig;
+    _cellConfig = [[NSArray alloc] initWithArray:cellConfig];
     _actionHandler = handler ?: ^void(NSDictionary *resultDictionary){}; // non-nil handler in case nothing was provided
     _sections = [NSMutableArray array];
     _animatePlaceholders = animatePlaceholders;
