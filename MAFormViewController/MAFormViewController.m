@@ -17,7 +17,7 @@
 
 @implementation MAFormViewController
 
-- (instancetype)initWithCellConfigurations:(NSArray *)cellConfig actionText:(NSString *)actionText animatePlaceholders:(BOOL)animatePlaceholders handler:(void (^)(NSDictionary *resultDictionary))handler {
+- (instancetype)initWithCellConfigurations:(NSArray *)cellConfig actionText:(NSString *)actionText animatePlaceholders:(BOOL)animatePlaceholders handler:(actionHandler)handler {
     self = [super initWithStyle:UITableViewStyleGrouped];
     
     // the nav buttons should be like most iOS tableView-based forms a cancel button on
@@ -26,10 +26,10 @@
     self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:actionText style:UIBarButtonItemStylePlain target:self action:@selector(handleAction)];
     
     // cache the values we were init'd with for later and create our sections array
-    _cellConfig = cellConfig;
-    _actionHandler = handler ?: ^void(NSDictionary *resultDictionary){}; // non-nil handler in case nothing was provided
-    _sections = [NSMutableArray array];
+    _cellConfig = [[NSArray alloc] initWithArray:cellConfig];
+    _sections = [[NSMutableArray alloc] init];
     _animatePlaceholders = animatePlaceholders;
+    _handler = handler;
     
     return self;
 }
@@ -81,7 +81,7 @@
             
             // create the cell with the given type, the appropriate action, and the action handler
             // will set the correct field as the first responder or resign the first responder appropriately
-            MATextFieldCell *cell = [[MATextFieldCell alloc] initWithFieldType:field.fieldType action:action animatePlaceholder:_animatePlaceholders actionHandler:^{
+            MATextFieldCell *cell = [[MATextFieldCell alloc] initWithFieldType:field.fieldType action:action animatePlaceholder:_animatePlaceholders actionHandler:[^{
                 // if there's a reference to a next field, we're not the final field in the
                 // form and we should tell the next field to become the first responder
                 if (nextField) {
@@ -92,7 +92,7 @@
                 else {
                     [_lastField resignFirstResponder];
                 }
-            }];
+            } copy]];
             
             // set the initial value and placeholder for this cell
             cell.textField.text = field.initialValue;
@@ -151,13 +151,14 @@
     }
     
     // call the handler with the resulting dictionary
-    _actionHandler(resultDictionary);
+    _handler(resultDictionary);
 }
 
 - (void)cancel {
     // simply call the action handler with nil as the param
     // and the caller/presenter can handle what to do in this case
-    _actionHandler(nil);
+    
+    _handler( [[NSDictionary alloc] init] );
 }
 
 
