@@ -48,6 +48,12 @@ MAFormViewController *formVC = [[MAFormViewController alloc] initWithCellConfigu
     NSLog(@"%@", [resultDictionary description]);
 }];
 
+    // optional - disable the unsaved changes warning
+    // formVC.warnForUnsavedChanges = NO;
+    
+    // optional - override the default unsaved changes message
+    // formVC.unsavedChangesMessage = @"WAIT!!! You have unsaved changes!!";
+
 UINavigationController *formNC = [[UINavigationController alloc] initWithRootViewController:formVC];
 [self presentViewController:formNC animated:YES completion:nil];
 ```
@@ -61,6 +67,7 @@ Coupling the convenience and ease of MAFormViewControllers and MATextFieldCells,
 - Navigation from cell to cell using the keyboard so users don't need to tap on the next cell to continue filling out the form.
 - Dismissing the keyboard when the last field is done being edited.
 - Validation of required fields - ensuring they aren't left blank, telling users which fields are missing and setting the focus on the cell with the empty value.
+- Warning users about unsaved changes before dismissing the form when they hit cancel.
 - Packaging up all of the form data into a dictionary for ease-of-use.
 
 
