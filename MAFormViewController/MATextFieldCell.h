@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "MAFormViewController.h"
 
 enum MATextFieldType : NSUInteger {
     MATextFieldTypeDefault = 0,
@@ -38,9 +39,10 @@ enum MATextFieldActionType: NSUInteger {
     BOOL _animatePlaceholder;
 }
 
-- (instancetype)initWithFieldType:(NSUInteger)type action:(NSUInteger)action animatePlaceholder:(BOOL)animate actionHandler:(void (^)(void))handler;
-
+@property (nonatomic, retain) MAFormViewController *delegate;
 @property (nonatomic, retain) UITextField *textField;
 @property (readonly) CGFloat suggestedHeight;
+
+- (instancetype)initWithFieldType:(NSUInteger)type action:(NSUInteger)action animatePlaceholder:(BOOL)animate actionHandler:(void (^)(void))handler;
 
 @end

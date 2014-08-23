@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface MAFormViewController : UITableViewController {
+@interface MAFormViewController : UITableViewController <UIAlertViewDelegate> {
     NSMutableArray *_sections;
     NSArray *_cellConfig;
     void(^_actionHandler)(NSDictionary *);
@@ -17,7 +17,14 @@
     BOOL _animatePlaceholders;
 }
 
+@property (nonatomic) BOOL hasUnsavedChanges;
+@property (nonatomic) BOOL warnForUnsavedChanges;
+@property (nonatomic, retain) NSString *unsavedChangesMessage;
+
 - (instancetype)initWithCellConfigurations:(NSArray *)cellConfig actionText:(NSString *)actionText animatePlaceholders:(BOOL)animatePlaceholders handler:(void (^)(NSDictionary *resultDictionary))handler;
+
+// exposed as a delegate method for MATextFieldCell
+- (void)markFormHasBeenEdited;
 
 
 // expose these for unit tests

@@ -233,16 +233,22 @@ static CGFloat const kHeightIfUsingAnimatedPlaceholder = 55;
         }
     }
     
-    // if we're going to allow editing and we want to animate the placeholder
-    if (shouldAllowEditing && _animatePlaceholder) {
-        // animate it if we're adding characters and we don't already have a placeholder label
-        if (!_placeholderLabel && resultString.length > 0) {
-            [self animatePlaceholderAbove];
-        }
+    // if we're going to allow edits to be made
+    if (shouldAllowEditing) {
+        // tell our delegate that there have been edits made to the form
+        [self.delegate markFormHasBeenEdited];
         
-        // animate it back if we have a placeholder label and the resulting string will be empty
-        else if (_placeholderLabel && resultString.length == 0) {
-            [self animatePlaceholderBack];
+        // if we want to animate the placeholder
+        if (_animatePlaceholder) {
+            // animate it if we're adding characters and we don't already have a placeholder label
+            if (!_placeholderLabel && resultString.length > 0) {
+                [self animatePlaceholderAbove];
+            }
+            
+            // animate it back if we have a placeholder label and the resulting string will be empty
+            else if (_placeholderLabel && resultString.length == 0) {
+                [self animatePlaceholderBack];
+            }
         }
     }
     

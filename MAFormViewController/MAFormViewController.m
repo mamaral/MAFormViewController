@@ -11,6 +11,12 @@
 #import "MAFormField.h"
 #import "MATextFieldCell.h"
 
+static NSString * const kDefaultUnsavedChangesMessage = @"You have unsaved changes. Are you sure you want to cancel?";
+static NSString * const kDiscardUnsavedChangesYes = @"Yes";
+static NSString * const kDiscardUnsavedChangesNo = @"No";
+
+static NSInteger const kDiscardUnsavedChangesIndex = 1;
+
 @interface MAFormViewController ()
 
 @end
@@ -30,6 +36,9 @@
     _actionHandler = handler ?: ^void(NSDictionary *resultDictionary){}; // non-nil handler in case nothing was provided
     _sections = [NSMutableArray array];
     _animatePlaceholders = animatePlaceholders;
+    
+    self.warnForUnsavedChanges = YES;
+    self.unsavedChangesMessage = kDefaultUnsavedChangesMessage;
     
     return self;
 }
@@ -97,6 +106,7 @@
             // set the initial value and placeholder for this cell
             cell.textField.text = field.initialValue;
             cell.textField.placeholder = field.placeholder;
+            cell.delegate = self;
             
             // keep a reference to this field as the "next" field, so we know which field
             // should become the first responder when we come through the loop again as we
@@ -155,9 +165,17 @@
 }
 
 - (void)cancel {
-    // simply call the action handler with nil as the param
+    // if we want to warn about unsaved changes and we have unsaved changes,
+    // first prompt the user to ensure they want to discard them
+    if (self.warnForUnsavedChanges && self.hasUnsavedChanges) {
+        [[[UIAlertView alloc] initWithTitle:nil message:self.unsavedChangesMessage delegate:self cancelButtonTitle:nil otherButtonTitles:kDiscardUnsavedChangesNo, kDiscardUnsavedChangesYes, nil] show];
+    }
+    
+    // otherwise simply call the action handler with nil as the param
     // and the caller/presenter can handle what to do in this case
-    _actionHandler(nil);
+    else {
+        _actionHandler(nil);
+    }
 }
 
 
@@ -215,6 +233,24 @@
     NSArray *cellsForSection = _sections[indexPath.section];
     MATextFieldCell *cell = cellsForSection[indexPath.row];
     return cell.suggestedHeight;
+}
+
+
+#pragma mark - MAFormViewController delegate
+
+- (void)markFormHasBeenEdited {
+    // if any of the fields tell us they've
+    self.hasUnsavedChanges = YES;
+}
+
+
+#pragma mark - UIAlertView delegate
+
+- (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex {
+    // if they want to discard unsaved changes, call the action handler with nil to dismiss
+    if (buttonIndex == kDiscardUnsavedChangesIndex) {
+        _actionHandler(nil);
+    }
 }
 
 
