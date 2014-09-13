@@ -43,6 +43,6 @@ enum MATextFieldActionType: NSUInteger {
 @property (nonatomic, retain) UITextField *textField;
 @property (readonly) CGFloat suggestedHeight;
 
-- (instancetype)initWithFieldType:(NSUInteger)type action:(NSUInteger)action animatePlaceholder:(BOOL)animate actionHandler:(void (^)(void))handler;
+- (instancetype)initWithFieldType:(enum MATextFieldType)type action:(enum MATextFieldActionType)action animatePlaceholder:(BOOL)animate actionHandler:(void (^)(void))handler;
 
 @end
