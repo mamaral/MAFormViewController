@@ -213,11 +213,13 @@ static CGFloat const kHeightIfUsingAnimatedPlaceholder = 55;
         // the state abbreviation cell should only allow two characters
         case MATextFieldTypeStateAbbr: {
             shouldAllowEditing = resultString.length < 3;
+            break;
         }
             
         // the ZIP cell should only allow 5 characters
         case MATextFieldTypeZIP: {
             shouldAllowEditing = resultString.length < 6;
+            break;
         }
             
         // we want to flag that we should attempt to format the phone number as long as they are adding characters...
@@ -225,11 +227,13 @@ static CGFloat const kHeightIfUsingAnimatedPlaceholder = 55;
         case MATextFieldTypePhone: {
             _shouldAttemptFormat = resultString.length > self.textField.text.length;
             shouldAllowEditing = YES;
+            break;
         }
          
         // otherwise let them do whatever they want
         default: {
             shouldAllowEditing = YES;
+            break;
         }
     }
     
