@@ -4,7 +4,7 @@ Pod::Spec.new do |spec|
   spec.homepage         = 'https://github.com/mamaral/MAFormViewController'
   spec.authors          = 'Mike Amaral'
   spec.platform         = :ios
-  spec.summary          = 'MAFormViewController is designed for quick and easy UITableView-based form creation handling formatting, navigation, validation, and submission.'
+  spec.summary          = 'MAFormViewController is designed for quick and easy UITableView form creation handling formatting, navigation, validation, and submission.'
   spec.license          = "MIT"
 spec.source           =  { :git => 'https://github.com/Whelton/MAFormViewController.git', :tag => 'v1.3' }
   spec.source_files     = 'MAFormViewController/MAFormViewController.{h,m}', 'MAFormViewController/MAFormField.{h,m}', 'MAFormViewController/MATextFieldCell.{h,m}'
