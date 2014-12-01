@@ -1,6 +1,6 @@
 Pod::Spec.new do |spec|
   spec.name             = 'MAFormViewController'
-  spec.version          = '1.0'
+  spec.version          = '1.3'
   spec.homepage         = 'https://github.com/mamaral/MAFormViewController'
   spec.authors          = 'Mike Amaral'
   spec.platform         = :ios
