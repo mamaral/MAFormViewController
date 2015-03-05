@@ -236,6 +236,12 @@ static CGFloat const kHeightIfUsingAnimatedPlaceholder = 55;
             shouldAllowEditing = YES;
             break;
         }
+            
+        case MATextFieldTypeDate: {
+            _shouldAttemptFormat = resultString.length > self.textField.text.length;
+            shouldAllowEditing = resultString.length <= 10;
+            break;
+        }
          
         // otherwise let them do whatever they want
         default: {
@@ -322,6 +328,41 @@ static CGFloat const kHeightIfUsingAnimatedPlaceholder = 55;
     }
     else if (strippedValue.length >= 11) {
         formattedString = [NSString stringWithFormat:@"(%@) %@-%@ x%@", [strippedValue substringToIndex:3], [strippedValue substringWithRange:NSMakeRange(3, 3)], [strippedValue substringWithRange:NSMakeRange(6, 4)], [strippedValue substringFromIndex:10]];
+    }
+    
+    self.textField.text = formattedString;
+}
+
+
+#pragma mark - date formatting
+
+- (void)formatDate {
+    if (!_shouldAttemptFormat) {
+        return;
+    }
+    
+    NSString *currentString = self.textField.text;
+    NSString *strippedValue = [currentString stringByReplacingOccurrencesOfString:@"[^0-9]" withString:@"" options:NSRegularExpressionSearch range:NSMakeRange(0, currentString.length)];
+    
+    // Date formatting will follow the format MM/DD/YYYY
+    NSString *formattedString;
+    if (strippedValue.length == 0) {
+        formattedString = @"";
+    }
+    else if (strippedValue.length < 2) {
+        formattedString = strippedValue;
+    }
+    else if (strippedValue.length == 2) {
+        formattedString = [NSString stringWithFormat:@"%@/", strippedValue];
+    }
+    else if (strippedValue.length <= 4) {
+        formattedString = [NSString stringWithFormat:@"%@/%@", [strippedValue substringToIndex:2], [strippedValue substringFromIndex:2]] ;
+    }
+    else if (strippedValue.length <= 8) {
+        formattedString = [NSString stringWithFormat:@"%@/%@/%@", [strippedValue substringToIndex:2], [strippedValue substringWithRange:NSMakeRange(2, 2)], [strippedValue substringFromIndex:4]] ;
+    }
+    else {
+        formattedString = currentString;
     }
     
     self.textField.text = formattedString;
