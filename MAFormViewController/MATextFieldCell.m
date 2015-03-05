@@ -105,6 +105,13 @@ static CGFloat const kHeightIfUsingAnimatedPlaceholder = 55;
             self.textField.keyboardType = UIKeyboardTypeDecimalPad;
             requiresToolbar = YES;
             break;
+        case MATextFieldTypeDate:
+            self.textField.autocapitalizationType = UITextAutocapitalizationTypeNone;
+            self.textField.autocorrectionType = UITextAutocorrectionTypeNo;
+            self.textField.keyboardType = UIKeyboardTypeNumberPad;
+            [self.textField addTarget:self action:@selector(formatDate) forControlEvents:UIControlEventEditingChanged];
+            requiresToolbar = YES;
+            break;
         case MATextFieldTypePassword:
             self.textField.autocapitalizationType = UITextAutocapitalizationTypeNone;
             self.textField.autocorrectionType = UITextAutocorrectionTypeNo;
