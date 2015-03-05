@@ -42,11 +42,13 @@
     MAFormField *city = [MAFormField fieldWithKey:@"city" type:MATextFieldTypeAddress initialValue:nil placeholder:@"City" required:YES];
     MAFormField *state = [MAFormField fieldWithKey:@"state" type:MATextFieldTypeStateAbbr initialValue:nil placeholder:@"State" required:YES];
     MAFormField *zip = [MAFormField fieldWithKey:@"zip" type:MATextFieldTypeZIP initialValue:nil placeholder:@"ZIP" required:YES];
+    MAFormField *date = [MAFormField fieldWithKey:@"date" type:MATextFieldTypeDate initialValue:nil placeholder:@"Date (MM/DD/YYYY)" required:NO];
     
     // separate the cells into sections
     NSArray *firstSection = @[name, phone, email];
     NSArray *secondSection = @[street, city, state, zip];
-    NSArray *cellConfig = @[firstSection, secondSection];
+    NSArray *thirdSection = @[date];
+    NSArray *cellConfig = @[firstSection, secondSection, thirdSection];
     
     // create the form, wrap it in a navigation controller, and present it modally
     MAFormViewController *formVC = [[MAFormViewController alloc] initWithCellConfigurations:cellConfig actionText:@"Save" animatePlaceholders:YES handler:^(NSDictionary *resultDictionary) {
