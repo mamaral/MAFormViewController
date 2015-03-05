@@ -19,6 +19,7 @@ enum MATextFieldType : NSUInteger {
     MATextFieldTypeZIP,
     MATextFieldTypeNumber,
     MATextFieldTypeDecimal,
+    MATextFieldTypeDate,
     MATextFieldTypePassword,
     MATextFieldTypeURL,
     MATextFieldTypeNonEditable
