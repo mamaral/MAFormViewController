@@ -117,6 +117,10 @@ MATextFieldTypes and Standard Settings
 **Decimal**
 - decimal pad keyboard
 
+**Date**
+- number pad keyboard
+- automatically formats entry to "MM/DD/YYYY" format
+
 **Password**
 - auto-capitalize off
 - auto-correction off
