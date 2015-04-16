@@ -46,4 +46,6 @@ enum MATextFieldActionType: NSUInteger {
 
 - (instancetype)initWithFieldType:(enum MATextFieldType)type action:(enum MATextFieldActionType)action animatePlaceholder:(BOOL)animate actionHandler:(void (^)(void))handler;
 
+- (void)setInitialValue:(NSString *)initialValue placeholder:(NSString *)placeholder;
+
 @end

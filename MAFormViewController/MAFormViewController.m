@@ -104,8 +104,7 @@ static NSInteger const kDiscardUnsavedChangesIndex = 1;
             }];
             
             // set the initial value and placeholder for this cell
-            cell.textField.text = field.initialValue;
-            cell.textField.placeholder = field.placeholder;
+            [cell setInitialValue:field.initialValue placeholder:field.placeholder];
             cell.delegate = self;
             
             // keep a reference to this field as the "next" field, so we know which field
