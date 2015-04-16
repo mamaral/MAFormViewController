@@ -215,6 +215,14 @@ static NSInteger const kDiscardUnsavedChangesIndex = 1;
     return _sections.count;
 }
 
+- (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section {
+    return self.titleForHeaderInSectionBlock ? self.titleForHeaderInSectionBlock(section) : nil;
+}
+
+- (NSString *)tableView:(UITableView *)tableView titleForFooterInSection:(NSInteger)section {
+    return self.titleForFooterInSectionBlock ? self.titleForFooterInSectionBlock(section) : nil;
+}
+
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     NSArray *cellsForSection = _sections[section];
     return cellsForSection.count;
