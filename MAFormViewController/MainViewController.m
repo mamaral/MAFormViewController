@@ -43,11 +43,12 @@
     MAFormField *state = [MAFormField fieldWithKey:@"state" type:MATextFieldTypeStateAbbr initialValue:nil placeholder:@"State" required:YES];
     MAFormField *zip = [MAFormField fieldWithKey:@"zip" type:MATextFieldTypeZIP initialValue:nil placeholder:@"ZIP" required:YES];
     MAFormField *date = [MAFormField fieldWithKey:@"date" type:MATextFieldTypeDate initialValue:nil placeholder:@"Date (MM/DD/YYYY)" required:NO];
-    
+    MAFormField *disabledField = [MAFormField fieldWithKey:@"disabled" type:MATextFieldTypeNonEditable initialValue:@"This is not editable." placeholder:@"Disabled Field" required:NO];
+
     // separate the cells into sections
     NSArray *firstSection = @[name, phone, email];
     NSArray *secondSection = @[street, city, state, zip];
-    NSArray *thirdSection = @[date];
+    NSArray *thirdSection = @[date, disabledField];
     NSArray *cellConfig = @[firstSection, secondSection, thirdSection];
     
     // create the form, wrap it in a navigation controller, and present it modally
@@ -64,6 +65,26 @@
         // the key you provided when you created the form
         [[[UIAlertView alloc] initWithTitle:nil message:[NSString stringWithFormat:@"Thanks for registering %@!", resultDictionary[@"name"]] delegate:nil cancelButtonTitle:@"Yay!" otherButtonTitles:nil] show];
         NSLog(@"%@", [resultDictionary description]);
+    }];
+
+    [formVC setTitleForHeaderInSectionBlock:^NSString *(NSInteger section) {
+        if (section == 1) {
+            return @"Address";
+        }
+
+        else {
+            return nil;
+        }
+    }];
+
+    [formVC setTitleForFooterInSectionBlock:^NSString *(NSInteger section) {
+        if (section == 2) {
+            return @"Example Footer";
+        }
+
+        else {
+            return nil;
+        }
     }];
     
     UINavigationController *formNC = [[UINavigationController alloc] initWithRootViewController:formVC];
