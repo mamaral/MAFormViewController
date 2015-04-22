@@ -104,8 +104,7 @@ static NSInteger const kDiscardUnsavedChangesIndex = 1;
             }];
             
             // set the initial value and placeholder for this cell
-            cell.textField.text = field.initialValue;
-            cell.textField.placeholder = field.placeholder;
+            [cell setInitialValue:field.initialValue placeholder:field.placeholder];
             cell.delegate = self;
             
             // keep a reference to this field as the "next" field, so we know which field
@@ -213,6 +212,14 @@ static NSInteger const kDiscardUnsavedChangesIndex = 1;
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
     return _sections.count;
+}
+
+- (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section {
+    return self.titleForHeaderInSectionBlock ? self.titleForHeaderInSectionBlock(section) : nil;
+}
+
+- (NSString *)tableView:(UITableView *)tableView titleForFooterInSection:(NSInteger)section {
+    return self.titleForFooterInSectionBlock ? self.titleForFooterInSectionBlock(section) : nil;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {

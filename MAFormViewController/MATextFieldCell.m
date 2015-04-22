@@ -153,6 +153,16 @@ static CGFloat const kHeightIfUsingAnimatedPlaceholder = 55;
     }
 }
 
+- (void)setInitialValue:(NSString *)initialValue placeholder:(NSString *)placeholder {
+    self.textField.placeholder = placeholder;
+
+    if (initialValue) {
+        self.textField.text = initialValue;
+
+        [self animatePlaceholderAbove];
+    }
+}
+
 
 #pragma mark - placeholder animation
 
