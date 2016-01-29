@@ -1,6 +1,8 @@
 MAFormViewController
 ==================
 
+##Note - This project is no longer being actively supported. Thanks everyone for their contributions!
+
 MAFormViewController is designed to be used in tandem with MATextFieldCells for extremely quick and easy UITableView-based form creation that automatically handles form configuration, formatting, navigation, validation, and submission.
 
 
